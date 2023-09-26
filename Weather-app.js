@@ -9,7 +9,7 @@ searchBtn.addEventListener('click', () => {
     }
 });
 
-function getWeather(location) {
+const getWeather = (location) => {
     // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
     const apiKey = 'YOUR_API_KEY';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
@@ -24,7 +24,7 @@ function getWeather(location) {
         });
 }
 
-function displayWeather(data) {
+const displayWeather = (data) => {
     const cityName = data.name;
     const temperature = data.main.temp;
     const description = data.weather[0].description;
