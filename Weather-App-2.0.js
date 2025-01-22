@@ -26,13 +26,17 @@ function displayWeather(data) {
     const cityName = data.name;
     const temperature = data.main.temp;
     const description = data.weather[0].description;
- 
+    const humidity = data.main.humidity;
+    const windSpeed = data.wind.speed;
+    const atmPressure = data.main.pressure;
 // change the index to 1 and see what happens, make sure you are connected to the internet
     weatherInfo.innerHTML = `
         <h2>Weather in ${cityName}</h2>
         <p>Temperature: ${temperature}°C</p>
         <p>Description: ${description}</p>
-      
+        <p>Description: ${humidity }%</p>
+        <p>Description: ${windSpeed}m/s</p>    
+        <p>Description: ${atmPressure}hPa</p>
 
     `;
 }
