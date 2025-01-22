@@ -17,6 +17,10 @@ input[type="text"] {
     margin-right: 10px;
     border: 1px solid #ccc;
 }
+#loading {
+    display: none;
+    color: grey;
+}
 
 button {
     padding: 10px 20px;
