@@ -7,6 +7,8 @@ searchBtn.addEventListener('click', () => {
     const location = locationInput.value.trim();
     if (location !== '') {
         getWeather(location);
+    } else {
+        weatherInfo.innerHTML = '<p>Please enter a city name!</p>';
     }
 });
 
@@ -14,21 +16,24 @@ const getWeather = (location) => {
     const apiKey = 'cd91157f12ce9e57fd64dc3a66e598e6';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
 
-    // Show the loading message before making the API call
-    loading.style.display = "block";
-    weatherInfo.innerHTML = ""; // Clear previous weather info
+    loading.style.display = 'block';
+    weatherInfo.innerHTML = '';
 
     fetch(apiUrl)
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`City not found (Error: ${response.status})`);
+            }
+            return response.json();
+        })
         .then((data) => {
             displayWeather(data);
         })
         .catch((error) => {
-            weatherInfo.textContent = 'Error fetching weather data.';
+            weatherInfo.innerHTML = `<p>${error.message}</p>`;
         })
         .finally(() => {
-            // Hide the loading message after the API call
-            loading.style.display = "none";
+            loading.style.display = 'none';
         });
 };
 
