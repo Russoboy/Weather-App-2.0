@@ -10,16 +10,28 @@ h1 {
 .search-container {
     margin: 20px;
 }
+#refresh-btn{
+    color: red;
+    background-color: antiquewhite;
+    display: block;
+}
+.Error{
+ display: none;
+ 
+ color: red;
+}
+
+#loading {
+    display: none;
+    color: grey;
+}
+
 
 input[type="text"] {
     width: 60%;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ccc;
-}
-#loading {
-    display: none;
-    color: grey;
 }
 
 button {
