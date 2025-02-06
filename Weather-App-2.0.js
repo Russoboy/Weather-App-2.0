@@ -28,7 +28,7 @@ refreshBtn.addEventListener('click', () => {
 })
 
 const getWeather = (location) => {
-    const apiKey = 'cd91157f12ce9e57fd64dc3a66e598e6';
+    const apiKey = '';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
 
     loading.style.display = "block"; // Show the loading indicator
