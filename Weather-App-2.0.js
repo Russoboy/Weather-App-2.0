@@ -37,7 +37,7 @@ refreshBtn.addEventListener('click', () => {
 
 
 const getWeather = (location) => {
-    const apiKey = 'PUT YOUR API_KEY';
+    const apiKey = 'INPUT_YOUR_API_KEY';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
 
     loading.style.display = "block"; // Show the loading indicator
